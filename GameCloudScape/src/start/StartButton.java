@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class StartButton extends JButton
+public class StartButton extends JButton implements ActionListener
 {
 	
 	/**
@@ -15,17 +15,24 @@ public class StartButton extends JButton
 	
 	private static final String text = "Start";
 	
-	public StartButton()
+	private start.Screen startScreen;
+	
+	public StartButton(start.Screen startScreen)
 	{
 		super(text);
-		this.addActionListener(new ActionListener()
-		{
-			
-			public void actionPerformed(ActionEvent e)
-			{
-				//TODO create GameScreen, start that
-			}
-		});
+		
+		this.startScreen = startScreen;
+		
+		this.addActionListener(this);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0)
+	{
+		new game.Screen();
+		
+		this.startScreen.dispose();
 	}
 	
 }
