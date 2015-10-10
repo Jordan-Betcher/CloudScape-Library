@@ -26,7 +26,7 @@ public class Screen extends JFrame
 		
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		JButton Start = new StartButton();
+		JButton Start = new StartButton(this);
 		Component StartToLoadSpace = Box.createHorizontalStrut(20);
 		JButton Load = new LoadButton();
 		
