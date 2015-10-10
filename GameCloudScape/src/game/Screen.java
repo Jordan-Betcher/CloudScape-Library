@@ -15,7 +15,19 @@ public class Screen extends JFrame
 	private WorldMap worldMap;
 	private RenderPanel renderPanel;
 	
+	public Screen()
+	{
+		//TODO generate a real world Map
+
+		this.createScreen(new WorldMap());
+	}
+	
 	public Screen(WorldMap worldMap)
+	{
+		this.createScreen(worldMap);
+	}
+	
+	private void createScreen(WorldMap worldMap)
 	{
 		JPanel panel = new JPanel();
 		this.setSize(960, 640);
