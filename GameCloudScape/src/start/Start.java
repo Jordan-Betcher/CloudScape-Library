@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Screen extends JFrame
+public class Start extends JFrame
 {
 	
 	/**
@@ -22,7 +22,7 @@ public class Screen extends JFrame
 	 * 
 	 * @author pplluumm
 	 */
-	public Screen()
+	public Start()
 	{
 		
 		JPanel panel = new JPanel();

@@ -15,7 +15,7 @@ public class StartButton extends JButton implements ActionListener
 	
 	private static final String text = "Start";
 	
-	private start.Screen startScreen;
+	private start.Start startScreen;
 	
 	/**
 	 * On Pressed creates game.Screen
@@ -23,7 +23,7 @@ public class StartButton extends JButton implements ActionListener
 	 * @author pplluumm
 	 * @param startScreen is the screen the game starts on, this button will close it after this button is pushed
 	 */
-	public StartButton(start.Screen startScreen)
+	public StartButton(start.Start startScreen)
 	{
 		super(text);
 		
