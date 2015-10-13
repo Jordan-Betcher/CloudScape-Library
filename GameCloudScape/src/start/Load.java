@@ -1,6 +1,6 @@
 package start;
 
-import game.WorldMap;
+import game.worldmap.WorldMap;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class Load
 			try
 			{
 				worldMap = ((WorldMap)reader.readObject());
-				new game.Screen();
+				new game.screen.Screen();
 			} 
 			catch (ClassNotFoundException e)
 			{

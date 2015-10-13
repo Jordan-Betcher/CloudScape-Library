@@ -1,4 +1,6 @@
-package game;
+package game.screen;
+
+import game.worldmap.WorldMap;
 
 import java.awt.BorderLayout;
 
@@ -15,13 +17,24 @@ public class Screen extends JFrame
 	private WorldMap worldMap;
 	private RenderPanel renderPanel;
 	
+	/**
+	 * Creates a screen that displays a new WorldMap
+	 * 
+	 * @author pplluumm
+	 * @param worldMap is the precreated world that will be loaded onto the screen
+	 */
 	public Screen()
 	{
 		//TODO generate a real world Map
 
 		this.createScreen(new WorldMap());
 	}
-	
+	/**
+	 * Creates a screen that displays the passed in WorldMap
+	 * 
+	 * @author pplluumm
+	 * @param worldMap is the precreated world that will be loaded onto the screen
+	 */
 	public Screen(WorldMap worldMap)
 	{
 		this.createScreen(worldMap);

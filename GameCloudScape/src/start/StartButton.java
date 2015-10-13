@@ -36,7 +36,7 @@ public class StartButton extends JButton implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
-		new game.Screen();
+		new game.screen.Screen();
 		
 		this.startScreen.dispose();
 	}
