@@ -14,6 +14,12 @@ public class LoadFileChooser extends JFileChooser implements ActionListener
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * Creates a FileChooser to select the correct save file
+	 * 
+	 * @author pplluumm
+	 * @param startDirectoryFile is the directory that the FileChooser will start at
+	 */
 	public LoadFileChooser(File startDirectoryFile)
 	{
 		super(startDirectoryFile);

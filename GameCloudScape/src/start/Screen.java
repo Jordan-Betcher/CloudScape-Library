@@ -17,6 +17,11 @@ public class Screen extends JFrame
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * Creates the Screen for the start page
+	 * 
+	 * @author pplluumm
+	 */
 	public Screen()
 	{
 		

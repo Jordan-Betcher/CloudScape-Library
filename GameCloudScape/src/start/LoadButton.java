@@ -15,6 +15,12 @@ public class LoadButton extends JButton
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * When this button is clicked, it opens a File Chooser.
+	 * Once the file is selected it Loads it
+	 * 
+	 * @author pplluumm
+	 */
 	public LoadButton()
 	{
 		this.setText("Load");

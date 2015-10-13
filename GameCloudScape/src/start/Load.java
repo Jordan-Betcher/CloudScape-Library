@@ -8,6 +8,13 @@ import java.io.ObjectInputStream;
 
 public class Load
 {
+	
+	/**
+	 * Loads File at the directory
+	 * 
+	 * @author pplluumm
+	 * @param Dir
+	 */
 	public static void mapOfMaps(String Dir)
 	{
 		WorldMap worldMap = null;
