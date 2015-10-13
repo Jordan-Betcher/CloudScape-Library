@@ -26,7 +26,7 @@ public class RenderPanel extends JPanel
 		this.setBounds(0, 0, 960, 640);
 		
 		JPanel AbilitiesPanel = new FightInfoPanel();
-		JPanel menuPanel = new MenuPanel(map);
+		JPanel menuPanel = new MenuPanel(worldMap);
 		
 		this.setLayout(new BorderLayout(0, 0));
 		
@@ -44,7 +44,7 @@ public class RenderPanel extends JPanel
 		g2d.setColor(Color.yellow);
 		
 		g2d.translate(this.getWidth() / 2, this.getHeight() / 2);
-		map.drawCurrentMap(g2d);
+		worldMap.drawCurrentSection(g2d);
 		g2d.translate(-this.getWidth() / 2, -this.getHeight() / 2);
 		// drawGrid(g2d);
 		
