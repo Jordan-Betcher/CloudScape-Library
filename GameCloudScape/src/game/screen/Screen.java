@@ -13,8 +13,6 @@ public class Screen extends JFrame
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	private WorldMap worldMap;
 	private RenderPanel renderPanel;
 	
 	/**
@@ -47,12 +45,10 @@ public class Screen extends JFrame
 		getContentPane().add(panel, BorderLayout.CENTER);
 		
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
-		this.worldMap = worldMap;
 		this.addKeyListener(new NormalKeyListener());
 		this.setFocusable(true);
 		
-		renderPanel = new RenderPanel(this.worldMap);
+		renderPanel = new RenderPanel(worldMap);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
