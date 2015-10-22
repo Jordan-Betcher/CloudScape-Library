@@ -2,5 +2,5 @@ package game.events;
 
 public interface IListener
 {
-	public void activate();
+	public void activate(Object obj);
 }

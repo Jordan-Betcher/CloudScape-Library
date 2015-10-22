@@ -1,5 +1,6 @@
 package game.events;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class Events
@@ -51,5 +52,13 @@ public class Events
 		}
 		
 		return null;
+	}
+
+	public static void activate(Object object, Class<? extends Event> event)
+	{
+		if(hasEvent(event))
+		{
+			getEvent(event).activate(object);
+		}
 	}
 }

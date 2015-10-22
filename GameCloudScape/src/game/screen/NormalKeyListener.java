@@ -1,19 +1,27 @@
 package game.screen;
 
+import game.events.Events;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class NormalKeyListener implements KeyListener
 {
-	//TODO create a eventBus so stuff can register to events
+	public NormalKeyListener()
+	{
+		Events.register(new KeyPressed());
+	}
+	
 	public void keyPressed(KeyEvent e)
 	{
 		String key = convertKeyToString(e);
+		Events.activate(e, KeyPressed.class);
 		
 	}
 	
 	public void keyReleased(KeyEvent e)
 	{
+		//TODO add a key released to events
 		String key = convertKeyToString(e);
 	}
 	

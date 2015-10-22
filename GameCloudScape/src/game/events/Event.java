@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 public abstract class Event
 {
-	private ArrayList<IListener> listeners = new ArrayList<IListener>();
-	
-	protected abstract void activated();
+	protected ArrayList<IListener> listeners = new ArrayList<IListener>();
 	
 	public void register(IListener listener)
 	{
@@ -20,11 +18,5 @@ public abstract class Event
 		}
 	}
 	
-	protected void activiate()
-	{
-		for(IListener listener : listeners)
-		{
-			listener.activate();
-		}
-	}
+	public abstract void activate(Object obj);
 }
