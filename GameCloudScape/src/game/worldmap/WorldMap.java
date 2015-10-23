@@ -39,17 +39,9 @@ public abstract class WorldMap implements Serializable
 	
 	
 	
+	public  abstract Section getSection(Position3D xyzPosition);
+	public abstract Section getSection(Position2D xyPosition);
 	
-	public abstract Section getSection(BlockPosition blockPosition);
-	
-	public Section getSection(Position3D xyzPosition)
-	{
-		return getSection(xyzPosition.getX(), xyzPosition.getY());
-	}
-	public Section getSection(Position2D xyPosition)
-	{
-		return getSection(xyPosition.getX(), xyPosition.getY());
-	}
 	public Section getSection(int x, int y)
 	{
 		if(recentSections.containsKey(new Position2D(x, y)))
@@ -98,15 +90,10 @@ public abstract class WorldMap implements Serializable
 		return section;
 	}
 	
-	public Block getBlock(BlockPosition blockPosition)
+	public Block getBlock(Position3D xyzPosition)
 	{
-		return getBlock(blockPosition.getX(), blockPosition.getY(), blockPosition.getZ());
+		return getBlock(xyzPosition.getX(), xyzPosition.getY(), xyzPosition.getZ());
 	}
 	public abstract Block getBlock(int x, int y, int z);
-	
-	public Block getBlock(Section section, BlockPosition blockPosition)
-	{
-		return section.getBlock(blockPosition);
-	}
 	
 }

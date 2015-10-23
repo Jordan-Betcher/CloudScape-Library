@@ -1,6 +1,6 @@
 package game.worldmap;
 
-public interface Block
+public interface Block extends Drawable
 {
 	
 }

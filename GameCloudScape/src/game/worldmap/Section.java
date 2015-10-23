@@ -6,5 +6,4 @@ public interface Section extends Drawable
 {
 	public Biome getBiome();
 	public Block getBlock(int x, int y, int z);
-	public Block getBlock(BlockPosition blockPosition);
 }
