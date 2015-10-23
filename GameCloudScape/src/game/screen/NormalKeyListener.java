@@ -9,13 +9,13 @@ public class NormalKeyListener implements KeyListener
 {
 	public NormalKeyListener()
 	{
-		Events.register(new KeyPressed());
+		Events.register(new KeyPressedEvent());
 	}
 	
 	public void keyPressed(KeyEvent e)
 	{
 		String key = convertKeyToString(e);
-		Events.activate(e, KeyPressed.class);
+		Events.activate(e, KeyPressedEvent.class);
 		
 	}
 	

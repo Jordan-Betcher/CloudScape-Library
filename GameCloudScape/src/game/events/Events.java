@@ -1,13 +1,12 @@
 package game.events;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class Events
 {
-	public static ArrayList<Event> events = new ArrayList<Event>();
+	public static ArrayList<IEvent> events = new ArrayList<IEvent>();
 	
-	public static void register(Event newEvent)
+	public static void register(IEvent newEvent)
 	{
 		if(hasEvent(newEvent.getClass()))
 		{
@@ -19,20 +18,20 @@ public class Events
 		}
 	}
 	
-	public static void register(IListener listener, Class<? extends Event> event)
+	public static void register(IEventListener listener, Class<? extends IEvent> event)
 	{
 		if(hasEvent(event))
 		{
-			Event oldEvent = getEvent(event);
-			oldEvent.register(listener);
+			IEvent currentEvent = getEvent(event);
+			currentEvent.register(listener);
 		}
 	}
 	
-	private static boolean hasEvent(Class<? extends Event> newEvent)
+	private static boolean hasEvent(Class<? extends IEvent> newEvent)
 	{
-		for(Event oldEvent : events)
+		for(IEvent currentEvent : events)
 		{
-			if(oldEvent.getClass() == newEvent)
+			if(currentEvent.getClass() == newEvent)
 			{
 				return true;
 			}
@@ -41,24 +40,33 @@ public class Events
 		return false;
 	}
 	
-	private static Event getEvent(Class<? extends Event> newEvent)
+	private static IEvent getEvent(Class<? extends IEvent> newEvent)
 	{
-		for(Event oldEvent : events)
+		for(IEvent currentEvent : events)
 		{
-			if(oldEvent.getClass() == newEvent)
+			if(currentEvent.getClass() == newEvent)
 			{
-				return oldEvent;
+				return currentEvent;
 			}
 		}
 		
 		return null;
 	}
 
-	public static void activate(Object object, Class<? extends Event> event)
+	public static void activate(Object object, Class<? extends IEvent> event)
 	{
 		if(hasEvent(event))
 		{
 			getEvent(event).activate(object);
+		}
+	}
+	
+	public static void deleteEvent(Class<? extends IEvent> event)
+	{
+		if(hasEvent(event))
+		{
+			IEvent currentEvent = getEvent(event);
+			events.remove(currentEvent);
 		}
 	}
 }
