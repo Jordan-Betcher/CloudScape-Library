@@ -1,5 +1,6 @@
 package game.screen;
 
+import game.worldmap.Entity;
 import game.worldmap.WorldMap;
 
 import java.awt.BorderLayout;
@@ -18,10 +19,13 @@ public class RenderPanel extends JPanel
 	private static final long serialVersionUID = 1L;
 	
 	private WorldMap worldMap;
+	private Entity entity;
 	
-	public RenderPanel(WorldMap worldMap)
+	public RenderPanel(WorldMap worldMap, Entity entity)
 	{
 		this.worldMap = worldMap;
+		this.entity = entity;
+		
 		this.setBackground(Color.BLUE);
 		this.setBounds(0, 0, 960, 640);
 		
@@ -44,10 +48,8 @@ public class RenderPanel extends JPanel
 		g2d.setColor(Color.yellow);
 		
 		g2d.translate(this.getWidth() / 2, this.getHeight() / 2);
-		worldMap.drawCurrentSection(g2d);
-		g2d.translate(-this.getWidth() / 2, -this.getHeight() / 2);
-		// drawGrid(g2d);
-		
+		worldMap.draw(g2d, entity.getPosition3D());
+		g2d.translate(-this.getWidth() / 2, -this.getHeight() / 2);		
 	}
 	
 }

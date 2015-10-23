@@ -1,5 +1,6 @@
 package game.screen;
 
+import game.worldmap.Entity;
 import game.worldmap.WorldMap;
 
 import java.awt.BorderLayout;
@@ -24,8 +25,6 @@ public class Screen extends JFrame
 	public Screen()
 	{
 		//TODO generate a real world Map
-
-		this.createScreen(new WorldMap());
 	}
 	/**
 	 * Creates a screen that displays the passed in WorldMap
@@ -48,7 +47,7 @@ public class Screen extends JFrame
 		this.addKeyListener(new NormalKeyListener());
 		this.setFocusable(true);
 		
-		renderPanel = new RenderPanel(worldMap);
+		//renderPanel = new RenderPanel(worldMap);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
