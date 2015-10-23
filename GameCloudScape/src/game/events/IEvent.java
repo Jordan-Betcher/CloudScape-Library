@@ -1,10 +1,5 @@
 package game.events;
 
-import game.screen.IKeyPressedListener;
-
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-
 /**
  * 
  * @author pplluumm
