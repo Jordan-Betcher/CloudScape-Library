@@ -1,6 +1,6 @@
 package game.screen;
 
-import game.worldmap.Entity;
+import game.worldmap.Moveable;
 import game.worldmap.WorldMap;
 
 import java.awt.BorderLayout;
@@ -19,12 +19,12 @@ public class RenderPanel extends JPanel
 	private static final long serialVersionUID = 1L;
 	
 	private WorldMap worldMap;
-	private Entity entity;
+	private Moveable player;
 	
-	public RenderPanel(WorldMap worldMap, Entity entity)
+	public RenderPanel(WorldMap worldMap, Moveable player)
 	{
 		this.worldMap = worldMap;
-		this.entity = entity;
+		this.player = player;
 		
 		this.setBackground(Color.BLUE);
 		this.setBounds(0, 0, 960, 640);
@@ -46,10 +46,13 @@ public class RenderPanel extends JPanel
 		
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.yellow);
-		
+	}
+	
+	protected void drawMap(Graphics2D g2d)
+	{
 		g2d.translate(this.getWidth() / 2, this.getHeight() / 2);
-		worldMap.draw(g2d, entity.getPosition3D());
-		g2d.translate(-this.getWidth() / 2, -this.getHeight() / 2);		
+		worldMap.draw(g2d, player.getPosition3D());
+		g2d.translate(-this.getWidth() / 2, -this.getHeight() / 2);	
 	}
 	
 }

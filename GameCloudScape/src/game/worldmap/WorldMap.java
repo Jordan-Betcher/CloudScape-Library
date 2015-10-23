@@ -19,11 +19,6 @@ public abstract class WorldMap implements Serializable
 	
 	HashMap<Position2D, Section> recentSections = new HashMap<Position2D, Section>();
 	
-
-	public void draw(Graphics2D g2d, Entity entity)
-	{
-		
-	}
 	public void draw(Graphics2D g2d, Position3D xyzPosition)
 	{
 		draw(g2d, xyzPosition.getX(), xyzPosition.getY(), xyzPosition.getZ());
@@ -89,11 +84,5 @@ public abstract class WorldMap implements Serializable
 		
 		return section;
 	}
-	
-	public Block getBlock(Position3D xyzPosition)
-	{
-		return getBlock(xyzPosition.getX(), xyzPosition.getY(), xyzPosition.getZ());
-	}
-	public abstract Block getBlock(int x, int y, int z);
 	
 }

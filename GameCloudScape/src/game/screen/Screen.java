@@ -1,6 +1,5 @@
 package game.screen;
 
-import game.worldmap.Entity;
 import game.worldmap.WorldMap;
 
 import java.awt.BorderLayout;
