@@ -23,7 +23,7 @@ public class Screen extends JFrame
 	 */
 	public Screen()
 	{
-		//TODO generate a real world Map
+		//TODO change commits to reflect that this should be extended and overriden
 	}
 	/**
 	 * Creates a screen that displays the passed in WorldMap
