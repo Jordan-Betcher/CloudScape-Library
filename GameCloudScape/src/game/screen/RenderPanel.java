@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
 public class RenderPanel extends JPanel
@@ -29,7 +30,7 @@ public class RenderPanel extends JPanel
 		this.setBackground(Color.BLUE);
 		this.setBounds(0, 0, 960, 640);
 		
-		JPanel menuPanel = new MenuPanel(worldMap);
+		JMenuBar menuPanel = new MenuPanel(worldMap);
 		
 		this.setLayout(new BorderLayout(0, 0));
 		

@@ -1,5 +1,7 @@
 package game.screen;
 
+import game.worldmap.DefaultMap;
+import game.worldmap.DefaultMoveable;
 import game.worldmap.WorldMap;
 
 import java.awt.BorderLayout;
@@ -23,6 +25,7 @@ public class Screen extends JFrame
 	 */
 	public Screen()
 	{
+		this.createScreen(new DefaultMap());
 		//TODO change commits to reflect that this should be extended and overriden
 	}
 	/**
@@ -46,7 +49,7 @@ public class Screen extends JFrame
 		this.addKeyListener(new NormalKeyListener());
 		this.setFocusable(true);
 		
-		//renderPanel = new RenderPanel(worldMap);
+		renderPanel = new RenderPanel(worldMap, new DefaultMoveable());
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
