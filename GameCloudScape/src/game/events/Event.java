@@ -36,8 +36,8 @@ package game.events;
 		
 	}
  */
-public interface IEvent
+public interface Event
 {
-	public void register(IEventListener listener);
+	public void register(EventListener listener);
 	public abstract void activate(Object obj);
 }

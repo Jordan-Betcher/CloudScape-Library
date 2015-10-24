@@ -1,14 +1,14 @@
 package game.screen;
 
-import game.events.IEvent;
-import game.events.IEventListener;
+import game.events.Event;
+import game.events.EventListener;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-public class KeyPressedEvent implements IEvent
+public class KeyPressedEvent implements Event
 {
-	private ArrayList<IKeyPressedListener> listeners = new ArrayList<IKeyPressedListener>();
+	private ArrayList<KeyPressedListener> listeners = new ArrayList<KeyPressedListener>();
 	
 	public void activate(Object obj)
 	{
@@ -16,7 +16,7 @@ public class KeyPressedEvent implements IEvent
 		{
 			KeyEvent keyEvent = (KeyEvent)obj;
 			
-			for(IKeyPressedListener listener : listeners)
+			for(KeyPressedListener listener : listeners)
 			{
 				listener.activate(keyEvent);
 			}
@@ -29,11 +29,11 @@ public class KeyPressedEvent implements IEvent
 	}
 
 	@Override
-	public void register(IEventListener listener)
+	public void register(EventListener listener)
 	{
 		try
 		{
-			listeners.add((IKeyPressedListener)listener);
+			listeners.add((KeyPressedListener)listener);
 		}
 		catch(Exception e)
 		{

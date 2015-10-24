@@ -29,13 +29,11 @@ public class RenderPanel extends JPanel
 		this.setBackground(Color.BLUE);
 		this.setBounds(0, 0, 960, 640);
 		
-		JPanel AbilitiesPanel = new FightInfoPanel();
 		JPanel menuPanel = new MenuPanel(worldMap);
 		
 		this.setLayout(new BorderLayout(0, 0));
 		
 		this.add(menuPanel, BorderLayout.NORTH);
-		this.add(AbilitiesPanel, BorderLayout.SOUTH);
 		this.setVisible(true);
 	}
 	

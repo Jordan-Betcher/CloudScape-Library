@@ -11,6 +11,6 @@ package game.events;
  * You have a KeyPressed Event that when activated sends a KeyEvent to all IKeyPressedListener
  * 
  */
-public interface IEventListener
+public interface EventListener
 {
 }
