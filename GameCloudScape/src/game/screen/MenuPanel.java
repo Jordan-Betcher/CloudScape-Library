@@ -1,16 +1,15 @@
 package game.screen;
 
+import game.worldmap.DefaultMap;
 import game.worldmap.WorldMap;
+import helper.Save;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 
-import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 
 public class MenuPanel extends JMenuBar
 {
@@ -35,7 +34,7 @@ public class MenuPanel extends JMenuBar
 	        eMenuItem.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent event) {
-	                System.exit(0);
+	                Save.map(new DefaultMap(), "test");
 	            }
 	        });
 
