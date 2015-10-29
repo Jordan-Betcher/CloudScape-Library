@@ -10,48 +10,66 @@ import java.io.ObjectOutputStream;
 public class Save
 {
 	
-	public static void map(WorldMap map, String Dir)
+	private static final String SAVEFOLDER = "Saves/";
+	private static final String SAVETYPE = ".txt";
+	
+	public static void map(WorldMap map, String saveName)
+	{
+		makeSaveFileExist();
+		
+		String Dir = SAVEFOLDER + saveName + SAVETYPE;
+		
+		try
 		{
-			//String Dir = SAVEFOLDER + saveName + SAVETYPE;
+			FileOutputStream fileOutputStream = new FileOutputStream(Dir);
+			ObjectOutputStream objectOutputStream = new ObjectOutputStream(
+					fileOutputStream);
 			
-			try
-				{
-					FileOutputStream fileOutputStream = new FileOutputStream(Dir);
-					ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-					
-					objectOutputStream.writeObject(map);
-					objectOutputStream.flush();
-					objectOutputStream.close();
-				}
-			catch(FileNotFoundException e)
-				{
-					e.printStackTrace();
-				}
-			catch(IOException e)
-				{
-					e.printStackTrace();
-				}
+			objectOutputStream.writeObject(map);
+			objectOutputStream.flush();
+			objectOutputStream.close();
 		}
+		catch (FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
 	
 	public static void object(Object obj, String Dir)
 	{
 		
+		makeSaveFileExist();
+		
 		try
-			{
-				FileOutputStream fileOutputStream = new FileOutputStream(Dir);
-				ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-				
-				objectOutputStream.writeObject(obj);
-				objectOutputStream.flush();
-				objectOutputStream.close();
-			}
-		catch(FileNotFoundException e)
-			{
-				e.printStackTrace();
-			}
-		catch(IOException e)
-			{
-				e.printStackTrace();
-			}
+		{
+			FileOutputStream fileOutputStream = new FileOutputStream(Dir);
+			ObjectOutputStream objectOutputStream = new ObjectOutputStream(
+					fileOutputStream);
+			
+			objectOutputStream.writeObject(obj);
+			objectOutputStream.flush();
+			objectOutputStream.close();
+		}
+		catch (FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	private static void makeSaveFileExist()
+	{
+		
+		if ( ! FileCheck.exists(SAVEFOLDER))
+		{
+			FileCheck.createFile(SAVEFOLDER);
+		}
 	}
 }

@@ -30,8 +30,17 @@ public class LoadFileChooser extends JFileChooser implements ActionListener
 	public void actionPerformed(ActionEvent arg0)
 	{
 		File file = this.getSelectedFile();
-		String directory = file.getAbsolutePath();
-		Load.mapOfMaps(directory);
+		
+		if(file == null)
+		{
+			
+		}
+		else
+		{
+			String directory = file.getAbsolutePath();
+			Load.mapOfMaps(directory);
+		}
+		
 	}
 	
 }
