@@ -9,12 +9,10 @@ import java.io.ObjectOutputStream;
 
 public class Save
 {
-	private static final String	SAVEFOLDER	= "Saves/";
-	private static final String	SAVETYPE	= ".txt";
 	
-	public static void map(WorldMap map, String saveName)
+	public static void map(WorldMap map, String Dir)
 		{
-			String Dir = SAVEFOLDER + saveName + SAVETYPE;
+			//String Dir = SAVEFOLDER + saveName + SAVETYPE;
 			
 			try
 				{
@@ -34,4 +32,26 @@ public class Save
 					e.printStackTrace();
 				}
 		}
+	
+	public static void object(Object obj, String Dir)
+	{
+		
+		try
+			{
+				FileOutputStream fileOutputStream = new FileOutputStream(Dir);
+				ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+				
+				objectOutputStream.writeObject(obj);
+				objectOutputStream.flush();
+				objectOutputStream.close();
+			}
+		catch(FileNotFoundException e)
+			{
+				e.printStackTrace();
+			}
+		catch(IOException e)
+			{
+				e.printStackTrace();
+			}
+	}
 }

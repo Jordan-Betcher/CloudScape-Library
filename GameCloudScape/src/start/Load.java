@@ -25,6 +25,31 @@ public class Load
 			try
 			{
 				worldMap = ((WorldMap)reader.readObject());
+				new game.screen.Screen(worldMap); //Change this so that the thing that calls this function gets the map and then it creates the World Screen
+			} 
+			catch (ClassNotFoundException e)
+			{
+				e.printStackTrace();
+			}
+			reader.close();
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}	
+	}
+
+	
+	public static Object load(String Dir)
+	{
+		//Change this so it throws exception
+		Object object = null;
+		try
+		{
+			FileInputStream door = new FileInputStream(Dir);
+			ObjectInputStream reader = new ObjectInputStream(door);
+			try
+			{
+				object = ((Object)reader.readObject());
 				new game.screen.Screen();
 			} 
 			catch (ClassNotFoundException e)
@@ -36,6 +61,6 @@ public class Load
 		{
 			e.printStackTrace();
 		}
-		
+		return object;
 	}
 }
