@@ -1,5 +1,7 @@
 package helper;
 
+import java.io.File;
+
 public class FileCheck
 {
 	/**
@@ -8,7 +10,7 @@ public class FileCheck
 	public static void createFile(String directory)
 	{
 		
-		java.io.File file = new java.io.File(directory);
+		File file = new File(directory);
 		
 		try
 		{
@@ -29,7 +31,7 @@ public class FileCheck
 	
 	public static boolean exists(String directory)
 	{
-		java.io.File file = new java.io.File(directory);
+		File file = new File(directory);
 		if (file.isDirectory())
 		{
 			return true;
