@@ -1,43 +1,22 @@
 package game.events;
 
-/**
- * 
- * @author pplluumm
- *
- *Example:
-    public void activate(Object obj)
+import java.util.ArrayList;
+
+public class Event<Information>
+{
+	private ArrayList<EventListenerType<Information>> listeners = new ArrayList<EventListenerType<Information>>();
+
+	public void register(EventListenerType<Information> listener)
 	{
-		try
-		{
-			YourObject yourObject = (YourObject)obj;
-			
-			for(YourListener listener : listeners)
-			{
-				listener.activate(yourObject);
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println("YourClass: the object passed in was not of YourObject. There is a activator that is passing in the wrong object");
-		}
+		listeners.add(listener);
 	}
 
-	@Override
-	public void register(YourListener listener)
+	public void activate(Information object)
 	{
-		try
+		for(EventListenerType<Information> listener : listeners)
 		{
-			listeners.add((YourListener)listener);
+			listener.activate(object);
 		}
-		catch(Exception e)
-		{
-			System.out.println("YourClass: the listener passed in was not of YourListener. The wrong listener is trying to get registered");
-		}
-		
 	}
- */
-public interface Event
-{
-	public void register(EventListener listener);
-	public abstract void activate(Object obj);
+	
 }

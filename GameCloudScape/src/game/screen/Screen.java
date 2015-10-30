@@ -46,7 +46,6 @@ public class Screen extends JFrame
 		getContentPane().add(panel, BorderLayout.CENTER);
 		
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		this.addKeyListener(new NormalKeyListener());
 		this.setFocusable(true);
 		
 		renderPanel = new RenderPanel(worldMap, new DefaultMoveable());

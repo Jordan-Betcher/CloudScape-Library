@@ -6,7 +6,7 @@ public class Events
 {
 	public static ArrayList<Event> events = new ArrayList<Event>();
 	
-	public static void register(Event newEvent)
+	public void add(Event newEvent)
 	{
 		if(hasEvent(newEvent.getClass()))
 		{
@@ -18,7 +18,7 @@ public class Events
 		}
 	}
 	
-	public static void register(EventListener listener, Class<? extends Event> event)
+	public void add(EventListenerType listener, Class<? extends Event> event)
 	{
 		if(hasEvent(event))
 		{
@@ -27,7 +27,7 @@ public class Events
 		}
 	}
 	
-	private static boolean hasEvent(Class<? extends Event> newEvent)
+	private boolean hasEvent(Class<? extends Event> newEvent)
 	{
 		for(Event currentEvent : events)
 		{
@@ -40,7 +40,7 @@ public class Events
 		return false;
 	}
 	
-	private static Event getEvent(Class<? extends Event> newEvent)
+	private Event getEvent(Class<? extends Event> newEvent)
 	{
 		for(Event currentEvent : events)
 		{
@@ -53,7 +53,7 @@ public class Events
 		return null;
 	}
 
-	public static void activate(Object object, Class<? extends Event> event)
+	public void activate(Object object, Class<? extends Event> event)
 	{
 		if(hasEvent(event))
 		{
@@ -61,7 +61,7 @@ public class Events
 		}
 	}
 	
-	public static void deleteEvent(Class<? extends Event> event)
+	public void deleteEvent(Class<? extends Event> event)
 	{
 		if(hasEvent(event))
 		{
