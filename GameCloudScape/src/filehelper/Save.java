@@ -1,4 +1,4 @@
-package helper;
+package filehelper;
 
 import game.worldmap.WorldMap;
 
@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+
 
 public class Save
 {
@@ -15,7 +16,7 @@ public class Save
 	
 	public static void map(WorldMap map, String saveName)
 	{
-		makeSaveFileExist();
+		makeSaveFolderExist();
 		
 		String Dir = SAVEFOLDER + saveName + SAVETYPE;
 		
@@ -42,7 +43,7 @@ public class Save
 	public static void object(Object obj, String Dir)
 	{
 		
-		makeSaveFileExist();
+		makeSaveFolderExist();
 		
 		try
 		{
@@ -64,12 +65,12 @@ public class Save
 		}
 	}
 	
-	private static void makeSaveFileExist()
+	private static void makeSaveFolderExist()
 	{
 		
-		if ( ! FileCheck.exists(SAVEFOLDER))
+		if ( ! FolderCheck.exists(SAVEFOLDER))
 		{
-			FileCheck.createFile(SAVEFOLDER);
+			FolderCheck.createFile(SAVEFOLDER);
 		}
 	}
 }

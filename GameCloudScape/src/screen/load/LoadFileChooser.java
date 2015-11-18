@@ -1,10 +1,12 @@
-package start;
+package screen.load;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
 import javax.swing.JFileChooser;
+
+import filehelper.Load;
 
 public class LoadFileChooser extends JFileChooser implements ActionListener
 {
@@ -38,7 +40,7 @@ public class LoadFileChooser extends JFileChooser implements ActionListener
 		else
 		{
 			String directory = file.getAbsolutePath();
-			Load.mapOfMaps(directory);
+			//Load.mapOfMaps(directory);
 		}
 		
 	}

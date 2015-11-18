@@ -10,6 +10,11 @@ public class Position2D
 		this.x = x;
 		this.y = y;
 	}
+	public Position2D(Position3D xyzPosition)
+	{
+		this.x = xyzPosition.getX();
+		this.y = xyzPosition.getY();
+	}
 
 	public int getX()
 	{

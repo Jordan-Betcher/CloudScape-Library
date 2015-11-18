@@ -1,8 +1,7 @@
-package game.screen;
+package screen.render;
 
-import game.worldmap.DefaultMap;
+import filehelper.Save;
 import game.worldmap.WorldMap;
-import helper.Save;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,9 +18,12 @@ public class MenuPanel extends JMenuBar
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public MenuPanel(WorldMap worldMap)
+	private WorldMap map;
+	
+	public MenuPanel(WorldMap map)
 	{
 		createMenuBar();
+		this.map = map;
 	}
 	
 	 private void createMenuBar() {
@@ -34,7 +36,7 @@ public class MenuPanel extends JMenuBar
 	        eMenuItem.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent event) {
-	                Save.map(new DefaultMap(), "test");
+	                Save.map(map, "test");
 	            }
 	        });
 

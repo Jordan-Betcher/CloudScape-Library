@@ -1,7 +1,8 @@
-package game.screen;
+package screen.render;
 
 import game.worldmap.Moveable;
 import game.worldmap.WorldMap;
+import game.worldmap.camara.Camara;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,7 +12,7 @@ import java.awt.Graphics2D;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
-public class RenderPanel extends JPanel
+public class RenderMapPanel extends JPanel
 {
 	
 	/**
@@ -20,12 +21,12 @@ public class RenderPanel extends JPanel
 	private static final long serialVersionUID = 1L;
 	
 	private WorldMap worldMap;
-	private Moveable player;
+	private Camara camara;
 	
-	public RenderPanel(WorldMap worldMap, Moveable player)
+	public RenderMapPanel(WorldMap worldMap, Camara camara)
 	{
 		this.worldMap = worldMap;
-		this.player = player;
+		this.camara = camara;
 		
 		this.setBackground(Color.BLUE);
 		this.setBounds(0, 0, 960, 640);
@@ -40,17 +41,17 @@ public class RenderPanel extends JPanel
 	
 	public void paintComponent(Graphics g)
 	{
-		
 		super.paintComponent(g);
 		
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.setColor(Color.yellow);
+		
+		drawMap(g2d);
 	}
 	
-	protected void drawMap(Graphics2D g2d)
+	private void drawMap(Graphics2D g2d)
 	{
 		g2d.translate(this.getWidth() / 2, this.getHeight() / 2);
-		worldMap.draw(g2d, player.getPosition3D());
+		camara.draw(g2d, worldMap);
 		g2d.translate(-this.getWidth() / 2, -this.getHeight() / 2);	
 	}
 	

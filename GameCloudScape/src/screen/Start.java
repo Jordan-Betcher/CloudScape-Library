@@ -1,4 +1,4 @@
-package start;
+package screen;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -8,6 +8,9 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import screen.load.LoadButton;
+import screen.start.StartButton;
 
 public class Start extends JFrame
 {

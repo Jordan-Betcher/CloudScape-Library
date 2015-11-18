@@ -1,45 +1,35 @@
-package game.screen;
+package screen;
 
-import game.worldmap.DefaultMap;
-import game.worldmap.DefaultMoveable;
 import game.worldmap.WorldMap;
+import game.worldmap.camara.Camara;
 
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Screen extends JFrame
+import screen.render.RenderMapPanel;
+
+public class Render extends JFrame
 {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private RenderPanel renderPanel;
+	private RenderMapPanel renderPanel;
 	
-	/**
-	 * Creates a screen that displays a new WorldMap
-	 * 
-	 * @author pplluumm
-	 * @param worldMap is the precreated world that will be loaded onto the screen
-	 */
-	public Screen()
-	{
-		this.createScreen(new DefaultMap());
-		//TODO change commits to reflect that this should be extended and overriden
-	}
 	/**
 	 * Creates a screen that displays the passed in WorldMap
 	 * 
 	 * @author pplluumm
 	 * @param worldMap is the precreated world that will be loaded onto the screen
 	 */
-	public Screen(WorldMap worldMap)
+	public Render(WorldMap worldMap, Camara camara)
 	{
-		this.createScreen(worldMap);
+		this.createScreen(worldMap, camara);
 	}
 	
-	private void createScreen(WorldMap worldMap)
+	private void createScreen(WorldMap worldMap, Camara camara)
 	{
 		JPanel panel = new JPanel();
 		this.setSize(960, 640);
@@ -48,7 +38,7 @@ public class Screen extends JFrame
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setFocusable(true);
 		
-		renderPanel = new RenderPanel(worldMap, new DefaultMoveable());
+		renderPanel = new RenderMapPanel(worldMap, camara);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

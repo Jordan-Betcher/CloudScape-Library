@@ -19,6 +19,12 @@ public class Position3D
 		this.y = xyPosition.getY();
 		this.z = z;
 	}
+	public Position3D(Position2D xyPosition)
+	{
+		this.x = xyPosition.getX();
+		this.y = xyPosition.getY();
+		this.z = 1;
+	}
 	
 	public Position2D get2DPosition()
 	{

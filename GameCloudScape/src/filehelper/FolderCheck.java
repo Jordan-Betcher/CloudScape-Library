@@ -1,8 +1,8 @@
-package helper;
+package filehelper;
 
 import java.io.File;
 
-public class FileCheck
+public class FolderCheck
 {
 	/**
 	 * http://stackoverflow.com/questions/3024002/how-to-create-a-folder-in-java
