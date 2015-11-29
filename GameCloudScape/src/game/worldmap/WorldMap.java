@@ -1,3 +1,4 @@
+
 package game.worldmap;
 
 import java.awt.Rectangle;
@@ -8,3 +9,4 @@ public interface WorldMap
 	public ArrayList<Drawable> getDrawableInArea(Rectangle rectangle);
 	public void addMoveable(Moveable moveable);
 }
+
