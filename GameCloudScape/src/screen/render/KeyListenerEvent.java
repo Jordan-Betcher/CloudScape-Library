@@ -40,7 +40,9 @@ public class KeyListenerEvent extends Event<ArrayList<Character>> implements Key
 	{
 		if(chars.contains(input))
 		{
-			chars.remove(input);
+			//Must have chars.indexOf(input) because if you just put input 
+			//the input will automatically convert into an int and give you IndexOutOfBoundsException
+			chars.remove(chars.indexOf(input));
 			this.activate(chars);
 		}
 	}

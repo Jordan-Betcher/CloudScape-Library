@@ -14,7 +14,7 @@ public class Render extends JFrame
 	 */
 	private static final long serialVersionUID = 1L;
 	private CamaraRenderer renderPanel;
-	private KeyListenerEvent keyEvent;
+	private KeyListenerEvent keyListenerEvent;
 	
 	/**
 	 * Creates a screen that displays the passed in WorldMap
@@ -26,7 +26,8 @@ public class Render extends JFrame
 	public Render(Camara camara)
 	{
 		this.createScreen(camara);
-		this.keyEvent = new KeyListenerEvent();
+		this.keyListenerEvent = new KeyListenerEvent();
+		this.addKeyListener(keyListenerEvent);
 	}
 	
 	private void createScreen(Camara camara)
@@ -59,6 +60,6 @@ public class Render extends JFrame
 
 	public KeyListenerEvent getKeyListenerEvent()
 	{
-		return this.keyEvent;
+		return this.keyListenerEvent;
 	}
 }
