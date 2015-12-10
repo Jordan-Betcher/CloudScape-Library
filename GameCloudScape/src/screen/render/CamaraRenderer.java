@@ -9,7 +9,7 @@ import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
-public class RenderCamara extends JPanel
+public class CamaraRenderer extends JPanel
 {
 	
 	/**
@@ -19,7 +19,7 @@ public class RenderCamara extends JPanel
 	
 	private Camara camara;
 	
-	public RenderCamara(Camara camara)
+	public CamaraRenderer(Camara camara)
 	{
 		this.camara = camara;
 		
