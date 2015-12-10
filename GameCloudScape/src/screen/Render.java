@@ -38,7 +38,7 @@ public class Render extends JFrame
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setFocusable(true);
 		
-		renderPanel = new RenderMapPanel(worldMap, camara);
+		renderPanel = new RenderMapPanel(camara);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

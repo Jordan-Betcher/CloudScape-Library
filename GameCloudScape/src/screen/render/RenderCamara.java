@@ -20,22 +20,17 @@ public class RenderMapPanel extends JPanel
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private WorldMap worldMap;
 	private Camara camara;
 	
-	public RenderMapPanel(WorldMap worldMap, Camara camara)
+	public RenderMapPanel(Camara camara)
 	{
-		this.worldMap = worldMap;
 		this.camara = camara;
 		
 		this.setBackground(Color.BLUE);
 		this.setBounds(0, 0, 960, 640);
 		
-		JMenuBar menuPanel = new MenuPanel(worldMap);
-		
 		this.setLayout(new BorderLayout(0, 0));
-		
-		this.add(menuPanel, BorderLayout.NORTH);
+		//took out menu Panel when I made it so that world Map wasn't inputted her
 		this.setVisible(true);
 	}
 	
@@ -51,7 +46,7 @@ public class RenderMapPanel extends JPanel
 	private void drawMap(Graphics2D g2d)
 	{
 		g2d.translate(this.getWidth() / 2, this.getHeight() / 2);
-		camara.draw(g2d, worldMap);
+		camara.draw(g2d);
 		g2d.translate(-this.getWidth() / 2, -this.getHeight() / 2);	
 	}
 	
