@@ -12,7 +12,7 @@ import java.awt.Graphics2D;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
-public class RenderMapPanel extends JPanel
+public class RenderCamara extends JPanel
 {
 	
 	/**
@@ -22,7 +22,7 @@ public class RenderMapPanel extends JPanel
 	
 	private Camara camara;
 	
-	public RenderMapPanel(Camara camara)
+	public RenderCamara(Camara camara)
 	{
 		this.camara = camara;
 		
