@@ -20,7 +20,7 @@ public class Position2D
 	{
 		return this.x;
 	}
-
+	
 	public int getY()
 	{
 		return this.y;
@@ -31,6 +31,18 @@ public class Position2D
 	{
         return 0;
     }
+	
+	public void add(int x, int y)
+	{
+		this.x += x;
+		this.y += y;
+	}
+	
+	public void add(Position2D xyPosition)
+	{
+		this.x += xyPosition.getX();
+		this.y += xyPosition.getY();
+	}
 
 	 @Override
     public boolean equals(Object o) 

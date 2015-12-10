@@ -23,7 +23,7 @@ public class Position3D
 	{
 		this.x = xyPosition.getX();
 		this.y = xyPosition.getY();
-		this.z = 1;
+		this.z = 0;
 	}
 	
 	public Position2D get2DPosition()
@@ -42,6 +42,32 @@ public class Position3D
 	public int getZ()
 	{
 		return this.z;
+	}
+	
+	public void add(int x, int y)
+	{
+		this.x += x;
+		this.y += y;
+	}
+	
+	public void add(int x, int y, int z)
+	{
+		this.x += x;
+		this.y += y;
+		this.z += z;
+	}
+	
+	public void add(Position2D xyPosition)
+	{
+		this.x += xyPosition.getX();
+		this.y += xyPosition.getY();
+	}
+	
+	public void add(Position3D xyzPosition)
+	{
+		this.x += xyzPosition.getX();
+		this.y += xyzPosition.getY();
+		this.z += xyzPosition.getZ();
 	}
 	
 	@Override
