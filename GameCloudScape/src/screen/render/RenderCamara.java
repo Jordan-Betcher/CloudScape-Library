@@ -1,7 +1,5 @@
 package screen.render;
 
-import game.worldmap.Moveable;
-import game.worldmap.WorldMap;
 import game.worldmap.camara.Camara;
 
 import java.awt.BorderLayout;
@@ -9,7 +7,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
 public class RenderCamara extends JPanel

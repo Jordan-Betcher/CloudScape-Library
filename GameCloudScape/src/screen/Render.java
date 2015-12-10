@@ -1,6 +1,5 @@
 package screen;
 
-import game.worldmap.WorldMap;
 import game.worldmap.camara.Camara;
 
 import java.awt.BorderLayout;
@@ -24,12 +23,12 @@ public class Render extends JFrame
 	 * @author pplluumm
 	 * @param worldMap is the precreated world that will be loaded onto the screen
 	 */
-	public Render(WorldMap worldMap, Camara camara)
+	public Render(Camara camara)
 	{
-		this.createScreen(worldMap, camara);
+		this.createScreen(camara);
 	}
 	
-	private void createScreen(WorldMap worldMap, Camara camara)
+	private void createScreen(Camara camara)
 	{
 		JPanel panel = new JPanel();
 		this.setSize(960, 640);
