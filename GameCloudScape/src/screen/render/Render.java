@@ -1,11 +1,15 @@
 package screen.render;
 
+import game.events.Events;
 import game.worldmap.camara.Camara;
 
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import screen.render.events.KeyListenerEvent;
+import screen.render.events.MouseKeyPressedEvent;
 
 public class Render extends JFrame
 {
@@ -14,7 +18,6 @@ public class Render extends JFrame
 	 */
 	private static final long serialVersionUID = 1L;
 	private CamaraRenderer renderPanel;
-	private KeyListenerEvent keyListenerEvent;
 	
 	/**
 	 * Creates a screen that displays the passed in WorldMap
@@ -23,11 +26,17 @@ public class Render extends JFrame
 	 * @param events 
 	 * @param worldMap is the precreated world that will be loaded onto the screen
 	 */
-	public Render(Camara camara)
+	public Render(Camara camara, Events events)
 	{
 		this.createScreen(camara);
-		this.keyListenerEvent = new KeyListenerEvent();
+		
+		KeyListenerEvent keyListenerEvent = new KeyListenerEvent();
 		this.addKeyListener(keyListenerEvent);
+		events.add(keyListenerEvent);
+		
+		MouseKeyPressedEvent mouseKeyPressedEvent = new MouseKeyPressedEvent();
+		this.addMouseListener(mouseKeyPressedEvent);
+		events.add(mouseKeyPressedEvent);
 	}
 	
 	private void createScreen(Camara camara)
@@ -56,10 +65,5 @@ public class Render extends JFrame
 	{
 		this.dispose();
 		
-	}
-
-	public KeyListenerEvent getKeyListenerEvent()
-	{
-		return this.keyListenerEvent;
 	}
 }

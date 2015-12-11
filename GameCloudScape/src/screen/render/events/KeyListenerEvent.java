@@ -1,4 +1,4 @@
-package screen.render;
+package screen.render.events;
 
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
