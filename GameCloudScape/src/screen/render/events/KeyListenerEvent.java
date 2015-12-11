@@ -1,50 +1,29 @@
 package screen.render.events;
 
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 
 import game.events.Event;
 
-public class KeyListenerEvent extends Event<ArrayList<Character>> implements KeyListener
+public class KeyListenerEvent extends Event<KeyEvent> implements KeyListener
 {
-	private ArrayList<Character> chars = new ArrayList<Character>();
 
 	@Override
-	public void keyPressed(java.awt.event.KeyEvent e)
+	public void keyPressed(KeyEvent keyEvent)
 	{
-		addChar(e.getKeyChar());
+		this.activate(keyEvent);
 	}
 
 	@Override
-	public void keyReleased(java.awt.event.KeyEvent e)
+	public void keyReleased(KeyEvent keyEvent)
 	{
-		removeChar(e.getKeyChar());
+		this.activate(keyEvent);
 	}
 
 	@Override
-	public void keyTyped(java.awt.event.KeyEvent e)
+	public void keyTyped(KeyEvent e)
 	{
 		
-	}
-	
-	private void addChar(char input)
-	{
-		if( ! chars.contains(input))
-		{
-			chars.add(input);
-			this.activate(chars);
-		}
-	}
-	
-	private void removeChar(char input)
-	{
-		if(chars.contains(input))
-		{
-			//Must have chars.indexOf(input) because if you just put input 
-			//the input will automatically convert into an int and give you IndexOutOfBoundsException
-			chars.remove(chars.indexOf(input));
-			this.activate(chars);
-		}
 	}
 	
 }
