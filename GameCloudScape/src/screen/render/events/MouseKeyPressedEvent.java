@@ -11,7 +11,7 @@ public class MouseKeyPressedEvent extends Event<MouseEvent> implements MouseList
 	@Override
 	public void mouseClicked(MouseEvent e)
 	{
-		this.activate(e);
+		
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class MouseKeyPressedEvent extends Event<MouseEvent> implements MouseList
 	@Override
 	public void mouseReleased(MouseEvent e)
 	{
-		this.activate(e);
+		
 	}
 	
 }
