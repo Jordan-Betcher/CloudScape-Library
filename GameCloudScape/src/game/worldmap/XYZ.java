@@ -2,18 +2,18 @@ package game.worldmap;
 
 public class XYZ
 {
-	private int x;
-	private int y;
-	private int z;
+	private double x;
+	private double y;
+	private double z;
 	
 	
-	public XYZ(int x, int y, int z)
+	public XYZ(double x, double y, double z)
 	{
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
-	public XYZ(XY xyPosition, int z)
+	public XYZ(XY xyPosition, double z)
 	{
 		this.x = xyPosition.getX();
 		this.y = xyPosition.getY();
@@ -31,26 +31,26 @@ public class XYZ
 		return new XY(x,y);
 	}
 	
-	public int getX()
+	public double getX()
 	{
 		return this.x;
 	}
-	public int getY()
+	public double getY()
 	{
 		return this.y;
 	}
-	public int getZ()
+	public double getZ()
 	{
 		return this.z;
 	}
 	
-	public void add(int x, int y)
+	public void add(double x, double y)
 	{
 		this.x += x;
 		this.y += y;
 	}
 	
-	public void add(int x, int y, int z)
+	public void add(double x, double y, double z)
 	{
 		this.x += x;
 		this.y += y;
