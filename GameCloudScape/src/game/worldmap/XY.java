@@ -1,16 +1,16 @@
 package game.worldmap;
 
-public class XYCoords
+public class XY
 {
 	private int x;
 	private int y;
 
-	public XYCoords(int x, int y)
+	public XY(int x, int y)
 	{
 		this.x = x;
 		this.y = y;
 	}
-	public XYCoords(XYZCoords xyzPosition)
+	public XY(XYZ xyzPosition)
 	{
 		this.x = xyzPosition.getX();
 		this.y = xyzPosition.getY();
@@ -38,7 +38,7 @@ public class XYCoords
 		this.y += y;
 	}
 	
-	public void add(XYCoords xyPosition)
+	public void add(XY xyPosition)
 	{
 		this.x += xyPosition.getX();
 		this.y += xyPosition.getY();
@@ -62,7 +62,7 @@ public class XYCoords
 	       return false;
 	    }
 	    
-	    XYCoords other = (XYCoords)o;
+	    XY other = (XY)o;
 	    
 	    if(this.x == other.getX() && this.y == other.getY())
 	    {

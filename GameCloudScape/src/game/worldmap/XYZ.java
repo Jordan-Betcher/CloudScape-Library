@@ -1,34 +1,34 @@
 package game.worldmap;
 
-public class XYZCoords
+public class XYZ
 {
 	private int x;
 	private int y;
 	private int z;
 	
 	
-	public XYZCoords(int x, int y, int z)
+	public XYZ(int x, int y, int z)
 	{
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
-	public XYZCoords(XYCoords xyPosition, int z)
+	public XYZ(XY xyPosition, int z)
 	{
 		this.x = xyPosition.getX();
 		this.y = xyPosition.getY();
 		this.z = z;
 	}
-	public XYZCoords(XYCoords xyPosition)
+	public XYZ(XY xyPosition)
 	{
 		this.x = xyPosition.getX();
 		this.y = xyPosition.getY();
 		this.z = 0;
 	}
 	
-	public XYCoords get2DPosition()
+	public XY get2DPosition()
 	{
-		return new XYCoords(x,y);
+		return new XY(x,y);
 	}
 	
 	public int getX()
@@ -57,13 +57,13 @@ public class XYZCoords
 		this.z += z;
 	}
 	
-	public void add(XYCoords xyPosition)
+	public void add(XY xyPosition)
 	{
 		this.x += xyPosition.getX();
 		this.y += xyPosition.getY();
 	}
 	
-	public void add(XYZCoords xyzPosition)
+	public void add(XYZ xyzPosition)
 	{
 		this.x += xyzPosition.getX();
 		this.y += xyzPosition.getY();
@@ -94,7 +94,7 @@ public class XYZCoords
 	       return false;
 	    }
 	    
-	    XYZCoords other = (XYZCoords)o;
+	    XYZ other = (XYZ)o;
 	    
 	    if(this.x == other.getX() && this.y == other.getY() && this.z == other.getZ())
 	    {
