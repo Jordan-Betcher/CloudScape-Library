@@ -42,9 +42,7 @@ public class CamaraRenderer extends JPanel
 	
 	private void drawMap(Graphics2D g2d)
 	{
-		g2d.translate(this.getWidth() / 2, this.getHeight() / 2);
 		camara.draw(g2d);
-		g2d.translate(-this.getWidth() / 2, -this.getHeight() / 2);	
 	}
 	
 }

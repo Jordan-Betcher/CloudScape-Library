@@ -35,7 +35,7 @@ public class Render extends JFrame
 		events.add(keyListenerEvent);
 		
 		MouseKeyPressedEvent mouseKeyPressedEvent = new MouseKeyPressedEvent();
-		this.addMouseListener(mouseKeyPressedEvent);
+		renderPanel.addMouseListener(mouseKeyPressedEvent);
 		events.add(mouseKeyPressedEvent);
 	}
 	
